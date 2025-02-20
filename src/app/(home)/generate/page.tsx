@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input"; // Add this import
 import { brands } from "@/config/brand";
 import { categories, productTypes, subcategories } from "@/config/category";
 import { DISABLE_PRODUCT_GENERATION } from "@/config/const";
@@ -8,11 +9,10 @@ import { handleClientError } from "@/lib/utils";
 import { useState } from "react";
 import { toast } from "sonner";
 
-const PRODUCTS_TO_GENERATE = 500;
-const START_FROM = 3001; // Add this line to control starting index
-
 export default function Page() {
     const [isLoading, setIsLoading] = useState(false);
+    const [productsToGenerate, setProductsToGenerate] = useState(500);
+    const [startFrom, setStartFrom] = useState(3001);
 
     const generateCSV = () => {
         try {
@@ -52,8 +52,8 @@ export default function Page() {
 
             const rows: string[] = [];
 
-            for (let i = 0; i < PRODUCTS_TO_GENERATE; i++) {
-                const currentIndex = START_FROM + i; // Calculate current product number
+            for (let i = 0; i < productsToGenerate; i++) {
+                const currentIndex = startFrom + i; // Calculate current product number
                 const hasVariants = Math.random() > 0.5;
                 const category =
                     categories[Math.floor(Math.random() * categories.length)];
@@ -151,8 +151,8 @@ export default function Page() {
             const csv = [headers, ...rows].join("\n");
 
             // Update the download filename to include range
-            const endIndex = START_FROM + PRODUCTS_TO_GENERATE - 1;
-            const filename = `products_${START_FROM}-${endIndex}.csv`;
+            const endIndex = startFrom + productsToGenerate - 1;
+            const filename = `products_${startFrom}-${endIndex}.csv`;
 
             // Create and download the file with new name
             const blob = new Blob([csv], { type: "text/csv" });
@@ -172,7 +172,38 @@ export default function Page() {
     };
 
     return (
-        <div className="flex flex-1 items-center justify-center">
+        <div className="flex flex-1 flex-col items-center justify-center gap-4">
+            <div className="flex gap-4">
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="startFrom">Start From</label>
+                    <Input
+                        id="startFrom"
+                        type="number"
+                        value={startFrom}
+                        className="bg-input"
+                        onChange={(e) => setStartFrom(Number(e.target.value))}
+                        min={1}
+                    />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="productsToGenerate">
+                        Products to Generate
+                    </label>
+                    <Input
+                        id="productsToGenerate"
+                        type="number"
+                        value={productsToGenerate}
+                        className="bg-input"
+                        onChange={(e) =>
+                            setProductsToGenerate(Number(e.target.value))
+                        }
+                        min={1}
+                        max={1000}
+                    />
+                </div>
+            </div>
+
             <Button
                 disabled={isLoading || DISABLE_PRODUCT_GENERATION}
                 onClick={generateCSV}
