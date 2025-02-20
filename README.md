@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js 15 Store
 
-## Getting Started
+A modern e-commerce store built with Next.js 15, showcasing the latest features and best practices in web development.
 
-First, run the development server:
+## 🌟 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This project demonstrates a fully functional e-commerce platform leveraging the power of Next.js 15, Server Actions, and a robust PostgreSQL database with DrizzleORM. The store features real-time updates, cart management, secure authentication, and a seamless checkout process.
+
+## ⚡ Tech Stack
+
+- **Language:** TypeScript
+- **Framework:** Next.JS 15
+- **Styling:** Tailwind CSS, Shadcn/UI, Motion
+- **Database:** PostgreSQL with DrizzleORM
+- **Deployment:** Vercel
+
+## 🚀 Features
+
+- Dynamic product listings
+- Categories and filters
+- Search functionality
+- Bulk product generation
+- Bulk product upload via CSV
+
+## 📦 Installation
+
+1. Clone the repository
+    ```bash
+    git clone https://github.com/itsdrvgo/next-15-store
+    ```
+2. Install dependencies
+    ```bash
+    bun install
+    ```
+3. Set up environment variables
+    ```bash
+     cp .env.example .env.local
+    ```
+4. Set up the database
+    ```bash
+    bun run db:mig
+    ```
+5. Start the development server
+    ```bash
+     bun run dev
+    ```
+
+## 🛠️ Development
+
+### Prerequisites
+
+- Basic knowledge of Next.js
+- Node.js 20+
+- PostgreSQL database (Supabase)
+- Bun (Recommended)
+
+### Environment Variables
+
+```
+DATABASE_URL=your_database_url
+NEXT_PUBLIC_FACEBOOK_APP_ID=your_facebook_app_id
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Commands
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+bun run dev     # Start the development server
+bun run build   # Build the project
+bun run start   # Start the production server
+bun run db:gen  # Generate database schema
+bun run db:push # Push database schema
+bun run db:mig  # Run database migrations
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤝 Contributing
 
-## Learn More
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-To learn more about Next.js, take a look at the following resources:
+1. Fork the repository
+2. Create your feature branch (git checkout -b feature/AmazingFeature)
+3. Commit your changes (git commit -m 'Add some AmazingFeature')
+4. Push to the branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is licensed under the [MIT License](LICENSE).
 
-## Deploy on Vercel
+## 🌐 Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/itsdrvgo)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/itsdrvgo)
+[![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?logo=Twitch&logoColor=white)](https://twitch.tv/itsdrvgo)
+[![X](https://img.shields.io/badge/X-%23000000.svg?logo=X&logoColor=white)](https://x.com/itsdrvgo)
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@itsdrvgodev)
