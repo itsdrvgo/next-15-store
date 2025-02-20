@@ -1,10 +1,10 @@
 import { getAbsoluteURL } from "@/lib/utils";
 
 export const siteConfig: SiteConfig = {
-    name: "Next.JS 15 Blog App",
-    description: "A blog app built with Next.JS 15",
+    name: "Next.JS 15 Store",
+    description: "A Store built with Next.JS 15",
     longDescription:
-        "A demo blog app built with Next.JS 15, TailwindCSS, Postgres, Drizzle, Redis, and more.",
+        "A Store built with Next.JS 15, TailwindCSS, Postgres, Drizzle, Redis, Drizzle and more.",
     keywords: [
         "Next.JS",
         "TailwindCSS",
@@ -16,6 +16,9 @@ export const siteConfig: SiteConfig = {
         "itsdrvgo",
         "Drago",
         "DragoLuca",
+        "Store",
+        "Marketplace",
+        "E-Commerce",
     ],
     category: "Marketplace",
     developer: {
