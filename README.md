@@ -4,12 +4,12 @@ A modern e-commerce store built with Next.js 15, showcasing the latest features 
 
 ## 🌟 Overview
 
-This project demonstrates a fully functional e-commerce platform leveraging the power of Next.js 15, Server Actions, and a robust PostgreSQL database with DrizzleORM. The store features real-time updates, cart management, secure authentication, and a seamless checkout process.
+This project demonstrates a fully functional e-commerce platform leveraging the power of Next.js 15, tRPC, and a robust PostgreSQL database with DrizzleORM.
 
 ## ⚡ Tech Stack
 
 - **Language:** TypeScript
-- **Framework:** Next.JS 15
+- **Framework:** Next.JS 15, tRPC
 - **Styling:** Tailwind CSS, Shadcn/UI, Motion
 - **Database:** PostgreSQL with DrizzleORM
 - **Deployment:** Vercel
